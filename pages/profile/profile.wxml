@@ -1,0 +1,6 @@
+<!--pages/profile/profile.wxml-->
+<button bindtap="butclick">点击切换</button>
+<text wx:if="{{isshow}}">哈哈</text>
+<text hidden>xixi</text>
+<wxs src="../../wxs/app.wxs" module="info"/>
+<text>{{info.message}}</text>

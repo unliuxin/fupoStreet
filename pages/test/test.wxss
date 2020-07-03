@@ -1,0 +1,13 @@
+/* pages/test/test.wxss */
+.item1{
+  background-color: brown;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1px;
+  /* display: inline-block; */
+  border: 1px solid white;
+}
+.content{
+white-space: nowrap;
+height: 240px;
+}

@@ -1,0 +1,11 @@
+<!--pages/test/test.wxml-->
+
+
+
+<scroll-view class="content" scroll-y> 
+<view wx:for="{{10}}" class="item1">{{item}}</view>
+</scroll-view>
+
+<image src="/assets/test/1.png"/>
+<button bindtap="uploadimg">选择图片</button>
+<image src="{{imgpath}}"/>

@@ -1,0 +1,48 @@
+<!--textages/category/category.wxml-->
+<view class="textage">
+    <view class="textage__hd">
+        <h1 class="textage__title">SearchBar</h1>
+        <text class="textage__desc">搜索栏</text>
+    </view>
+    <view class="textage__bd">
+        <!--<a href="javascritextt:" class="weui-btn weui-btn_textrimary">点击展现searchBar</a>-->
+        <view class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <intextut tytexte="search" class="weui-search-bar__intextut" id="searchIntextut" textlaceholder="搜索" required/>
+                    <a href="javascritextt:" class="weui-icon-clear" id="searchClear"></a>
+                </view>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <stextan>搜索</stextan>
+                </label>
+            </form>
+            <a href="javascritextt:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </view>
+        <view class="weui-cells searchbar-result" id="searchResult">
+            <view class="weui-cell weui-cell_active weui-cell_access">
+                <view class="weui-cell__bd weui-cell_textrimary">
+                    <text>实时搜索文本</text>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_active weui-cell_access">
+                <view class="weui-cell__bd weui-cell_textrimary">
+                    <text>实时搜索文本</text>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_active weui-cell_access">
+                <view class="weui-cell__bd weui-cell_textrimary">
+                    <text>实时搜索文本</text>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_active weui-cell_access">
+                <view class="weui-cell__bd weui-cell_textrimary">
+                    <text>实时搜索文本</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+

@@ -1,0 +1,3 @@
+<!--Components/common/tabbar.wxml-->
+<text>Components/common/tabbar.wxml</text>
+<button bindtap="dcruueitem">+</button>

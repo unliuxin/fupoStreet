@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "m-swiper":"/Components/swiper/swiper",
+    "tab-control":"/Components/tabControl/tabcontrol"
+  },
+  "navigationBarTitleText": "富婆街"
+}
