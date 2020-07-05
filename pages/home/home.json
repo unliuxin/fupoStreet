@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "m-swiper":"/Components/swiper/swiper",
-    "tab-control":"/Components/tabControl/tabcontrol"
+    "tab-control":"/Components/tabControl/tabcontrol",
+    "goods":"/Components/goods/goods",
+    "back-top":"/Components/back-top/back-top"
   },
   "navigationBarTitleText": "富婆街"
 }

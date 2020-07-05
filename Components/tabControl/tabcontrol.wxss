@@ -1,7 +1,6 @@
 /* Components/tabControl/tabcontrol.wxss */
 .tabcontrol{
   display: flex;
-  margin-bottom: 100rpx;
 }
 .control_item{
   flex: 1;
@@ -13,4 +12,7 @@
 }
 .control_item_active text{
   border-bottom: 6rpx solid red;
+}
+.control_item text{
+  padding-bottom:12rpx;
 }

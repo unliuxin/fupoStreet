@@ -19,7 +19,7 @@ App({
   login() {
     wx.login({
       success: (res) => {
-        console.log(res);
+        // console.log(res);
         //获取code
         const code = res.code
 

@@ -1,4 +1,4 @@
 <!--Components/tabControl/tabcontrol.wxml-->
-<block wx:for="{{titles}}" wx:key="{{index}}">
-	<view class="control_item {{cruueryindex==index ? 'control_item_active' : ''}}" bindtap="itemClick" data-index="{{index}}"><text>{{item}}</text></view>
+<block wx:for="{{titles}}" wx:key="index">
+	<view class="control_item {{currentindex==index ? 'control_item_active' : ''}}" bindtap="itemClick" data-index="{{index}}"><text>{{item}}</text></view>
 </block>

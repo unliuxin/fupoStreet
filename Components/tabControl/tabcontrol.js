@@ -14,7 +14,7 @@ Component({
    */
   data: {
     titles: ['新款', '流行', '精选'],
-    cruueryindex: 0,
+    currentindex: 0,
   },
 
   /**
@@ -24,10 +24,12 @@ Component({
     itemClick(event) {
       //triggerEvent是将子组件传递事件到父组件
       const index = event.currentTarget.dataset.index
+      
       this.setData({
-        cruueryindex: index
+        currentindex: index
       })
-      this.triggerEvent('homeitemClick',this.data.cruueryindex,{})
+
+      this.triggerEvent('homeitemClick',index,{})
     },
 
   }

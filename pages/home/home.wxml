@@ -1,7 +1,7 @@
 <view class="content">
 	<m-swiper list="{{banners}}" />
 	<view class="recommends">
-		<block wx:for="{{recommends}}" wx:index="{{index}}">
+		<block wx:for="{{recommends}}" wx:index="index">
 			<view class="recommends-item">
 				<image src="{{item.image}}" mode="widthFix" />
 				<text>{{item.title}}</text>
@@ -11,10 +11,7 @@
 	<view class="poopular_bg">
 		<image src="/assets/home/poopular_bg.jpg" />
 	</view>
-	<tab-control class="tabcontrol" bind:homeitemClick="tabcontrolitemclick" />
-	<view class="goods">
-		<block wx:for="{{goods[currentType].list}}" wx:index="{{index}}">
-			<view>{{item.title}}</view>
-		</block>
-	</view>
+	<tab-control class="tabcontrol" bind:homeitemClick="tabClick" bind:tab="tabclick" />
+	<goods goodslist="{{goods[currentType].list}}" />
+	<back-top  bindtap="backtop" wx:if="{{isShow}}"/>
 </view>

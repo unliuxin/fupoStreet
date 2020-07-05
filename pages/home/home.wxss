@@ -22,3 +22,8 @@
 .poopular_bg image{
   width: 100%;
 }
+
+/*商品数据样式*/
+.goods{
+  display: flex;
+}

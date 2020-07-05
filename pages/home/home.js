@@ -1,4 +1,9 @@
-import { getHomeMultiData, getGoodsData } from '../../servse/home.js'
+import {
+  getHomeMultiData,
+  getGoodsData
+} from '../../servse/home.js'
+const types = ['pop', 'new', 'sell']
+const BACKTOP_DISTDNCE=1000
 Page({
   /**
    * 页面的初始数据
@@ -7,11 +12,22 @@ Page({
     banners: [],
     recommends: [],
     goods: {
-      'pop': { page: 0, list: [] },
-      'new': { page: 0, list: [] },
-      'sell': { page: 0, list: [] }
+      pop: {
+        page: 1,
+        list: []
+      },
+      new: {
+        page: 1,
+        list: []
+      },
+      sell: {
+        page: 1,
+        list: []
+      },
     },
-    currentType: "pop"
+    currentType: "pop",
+    isShow: false,
+    
   },
 
   /**
@@ -39,26 +55,55 @@ Page({
 
   //请求商品数据
   _getGoodsData(type) {
-    const page = this.data.goods[type].page + 1
+    const page = this.data.goods[type].page
     getGoodsData(type, page).then(res => {
+      //从接口获取list数据
       const list = res.data.data.list
-      const oldList = this.data.goods[type].list
-      oldList.push(...list)
-      const typeKey = 'goods.$(type).list'
-      const pageKey = 'goods.$(type).page'
+      //获取data定义的list
+      // const oldList = this.data.goods[type].list
+      //将接口里面的list依次展开push到data中的list里面去
+      const goods = this.data.goods;
+      goods[type].list.push(...list)
+      goods[type].page += 1;
+
+      // 3.最新的goods设置到goods中
       this.setData({
-        [typeKey]: oldList,
-        [pageKey]: page
+        goods: goods
       })
     })
   },
 
+
   //-------------事件监听函数---------------
-  tabcontrolitemclick(event) {
-    console.log(event);
-    
-    const index = event
+
+  tabClick(e) {
+    // 1.根据当前的点击赋值最新的currentType
+    const index = e.detail
+
+
+    // let currentType = ''
+    // switch(index) {
+    //   case 0:
+    //     currentType = POP
+    //     break
+    //   case 1:
+    //     currentType = NEW
+    //     break
+    //   case 2:
+    //     currentType = SELL
+    //     break
+    // }
+    // this.setData({
+    //   currentType: currentType
+    // })
+    this.setData({
+      currentType: types[index]
+    })
   },
+
+
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -98,7 +143,21 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    this._getGoodsData(this.data.currentType)
+  },
 
+  //回到顶部显示和隐藏
+  onPageScroll: function (options) {
+    const scrollheight = options.scrollTop
+    this.setData({
+      isShow: scrollheight >= BACKTOP_DISTDNCE
+    })
+  },
+  backtop(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300,
+    })
   },
 
   /**
